@@ -9,11 +9,38 @@
 </head>
 <body>
     <launch-form class="launch_form" url="wss://elements.launchscout.com/socket" form-id="310018ac-c1c7-4ad3-98fa-ec72fe7ae4bc">
-        <form class="main_form">
-            <label>First Name</label>
-            <input type="text" name="first_name" placeholder="First Name">
-            <label>Last Name</label>
-            <input type="text" name="last_name" placeholder="Last Name">
+        <form class="main_form" name="Apprenticeship CTA">
+
+            <div class="field_wrapper">
+                <label> Name</label>
+                <input type="text" name="name" required = "true">
+
+                <div class="alert hidden" id="name_error">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path class="warning-icon" d="M9.06997 2.80002L14.75 12.92C15.35 13.98 14.85 14.83 13.65 14.83H2.34997C1.14997 14.83 0.649968 13.98 1.24997 12.93L6.92997 2.78002C7.52997 1.73002 8.47997 1.72002 9.06997 2.78002V2.80002ZM8.99997 11H6.99997V13H8.99997V11ZM8.99997 6.00002H6.99997V10H8.99997V6.00002Z" fill="#F94839"></path></svg>
+                    This field if required
+                </div>
+            </div>
+
+            <div class="field_wrapper">
+                <label> Work Email</label>
+                <input type="email" name="email" required = "true">
+
+                <div class="alert hidden" id="email_error">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path class="warning-icon" d="M9.06997 2.80002L14.75 12.92C15.35 13.98 14.85 14.83 13.65 14.83H2.34997C1.14997 14.83 0.649968 13.98 1.24997 12.93L6.92997 2.78002C7.52997 1.73002 8.47997 1.72002 9.06997 2.78002V2.80002ZM8.99997 11H6.99997V13H8.99997V11ZM8.99997 6.00002H6.99997V10H8.99997V6.00002Z" fill="#F94839"></path></svg>
+                    Enter a valid email adress
+                </div>
+            </div>
+
+            <div class="field_wrapper">
+                <label>Anything you want to share about your apprenticeship aspirations? (optional)</label>
+                <textarea name="about" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="field_wrapper" id="checkbox_wrapper">
+                <input type="checkbox" name="subscribed">
+                <label>Yes, I would like to receive information from Launch Scout by email newsletter.</label>
+            </div>
+
             <input type="submit" value="Submit">
         </form>
     </launch-form>
