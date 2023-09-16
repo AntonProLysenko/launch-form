@@ -26,8 +26,6 @@ let submitHandler = (evt) => {
   evt.preventDefault();
   parentForm.classList = "hidden";
   submissionResponse.classList.remove("hidden");
-  alert("Submitted")
-
 
   // LaunchFormElement.render=()=>{
   //     return this.complete ? y`<slot name="success">Worked!</slot>` : y`<slot>Error</slot>`;
@@ -36,12 +34,27 @@ let submitHandler = (evt) => {
 };
 
 
+let checkInputValidity=()=>{
+    // this.style.border = "1px solid rgb(249, 72, 57)";
+    if(nameField.value.length>=1){
+        nameField.style.border = "1px solid rgb(209, 209, 209)";
+        nameFieldError.classList.add("hidden");
+    }
 
-
+    if (emailField.value.length > 5 || emailField.value.includes("@")|| emailField.value.includes(".")){
+        emailField.style.border = "1px solid rgb(209, 209, 209)";
+        emailFieldError.classList.add("hidden");
+    }
+    
+}
+emailField.addEventListener("change", checkInputValidity)
+nameField.addEventListener("change", checkInputValidity)
+   emailField.reportValidity();
+   nameField.reportValidity();
+   
 button.addEventListener("click", () => {
-    console.dir(nameField);
 
-    if(emailField.value.length < 1 || !emailField.value.includes("@")|| !emailField.value.includes(".")) {
+    if(emailField.value.length < 5 || !emailField.value.includes("@")|| !emailField.value.includes(".")) {
         emailField.validity.valid = false
         emailField.setCustomValidity(" ");
     }else{
@@ -51,18 +64,18 @@ button.addEventListener("click", () => {
     if (nameField.validity.valueMissing) {
       nameField.setCustomValidity(" ");
       nameFieldError.classList.remove("hidden");
+      nameField.style.border = "1px solid rgb(249, 72, 57)";
     } else{
         nameField.setCustomValidity("");
+        nameField.style.border = " border: 1px solid rgb(49, 122, 226)"
     }
 
     if(!emailField.validity.valid){
         // emailField.setCustomValidity("");
         emailFieldError.classList.remove("hidden");
+        emailField.style.border = "1px solid rgb(249, 72, 57)";
     }
 
-    console.log(emailField.validity.valid);
-       console.log(nameField.validity.valid)
-    
 
     if (emailField.validity.valid&&nameField.validity.valid){
         nameFieldError.classList.add("hidden");
@@ -78,9 +91,12 @@ button.addEventListener("click", () => {
         nameFieldError.classList.add("hidden");
     }
 
-    // emailField.reportValidity()
-    // nameField.reportValidity()
+    emailField.reportValidity();
+    nameField.reportValidity()
+
 })
+
+
 
 
 
