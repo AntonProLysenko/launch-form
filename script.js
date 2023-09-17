@@ -47,10 +47,12 @@ let checkInputValidity=()=>{
     }
     
 }
+
+
 emailField.addEventListener("change", checkInputValidity)
 nameField.addEventListener("change", checkInputValidity)
-   emailField.reportValidity();
-   nameField.reportValidity();
+
+
    
 button.addEventListener("click", () => {
 
@@ -101,8 +103,7 @@ button.addEventListener("click", () => {
 
 
 
-console.log(submissionResponse);
 
-let responseTag = parentForm.firstChild.firstChild
+// let responseTag = parentForm.firstChild.firstChild
 // if (responseTag){
 //     console.log("text",responseTag)}
