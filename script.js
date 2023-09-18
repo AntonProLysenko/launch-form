@@ -4,20 +4,14 @@ let parentForm = document.querySelector(".launch_form")
 let form = document.querySelector(".main_form");
 
 let nameField = form.querySelector('input[name="name"]')
-// 
 let nameFieldError = form.querySelector('#name_error')
 
 let emailField = form.querySelector('input[name="email"]');
-// emailField.setCustomValidity(" ");
 let emailFieldError = form.querySelector("#email_error");
-
 
 let button = form.querySelector('input[type = "submit"]');
 
-
-
-
-let submissionResponse = document.querySelector("h1")
+let submissionResponse = document.querySelector("#answer");
 
 
 // console.log(LaunchFormElement);

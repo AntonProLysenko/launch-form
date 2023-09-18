@@ -9,6 +9,7 @@
 
 .form_wrapper{
     max-width: 480px;
+    height: 400px;
     margin: 0px auto;
     transition: all 400ms ease 0s;
     color: rgb(31, 31, 31);
@@ -16,6 +17,8 @@
     border-color: purple;
     padding: 0px;
     border-radius: 4px;
+    display: flex;
+    justify-content: center;
 
 }
 
@@ -186,4 +189,15 @@ input[type="submit"]{
     margin-top: 4px;
     -webkit-box-align: center;
     align-items: center;
+}
+
+#answer{
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+
+    margin-top: 16px;
+    font-weight: 400;
+    font-size: 25px;
+    color: rgb(88, 88, 88);
 }
